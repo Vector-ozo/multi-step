@@ -39,7 +39,7 @@ a{
 }
 .container{
     background-color: var(--alabaster);
-    width: 70%;
+    width: 60%;
     min-height: 400px;
     margin: auto;
     margin-top: 10vh;
@@ -50,11 +50,14 @@ a{
     border-radius: .5rem;
 }
 .side-bar{
-    background-color: #02295a;
-    width: 35%;
+    /* background-color: #02295a; */
+    background-image: url(/assets/images/bg-sidebar-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30%;
     padding: 1.5rem;
     border-radius: .5rem;
-    height: auto;
+    min-height: 450px;
 }
 
 .nav-bar li{
@@ -73,6 +76,7 @@ a{
     font-size: 11px;
     text-align: center;
     font-weight: 300;
+    cursor: pointer;
 }
 .number:hover{
     background-color: var(--pastel-blue);
@@ -101,7 +105,7 @@ a{
 .steps{
     padding: 1rem 4.5rem; 
     color: var(--cool-gray);
-    width: 65%;
+    width: 70%;
 }
 .step-1{
     margin-top: 1rem;
@@ -141,7 +145,8 @@ input{
     width: 100%;
     border: 1px solid var(--cool-gray);
     font-weight: 700;
-    color: var(--cool-gray);
+    color: var(--marine-blue);
+    cursor: pointer;
 }
 input::placeholder{
     color: var(--cool-gray);
@@ -151,7 +156,7 @@ input::placeholder{
     justify-content: space-between;
     align-items: center;
 }
-.next, .prev{
+.next{
     border: none;
     border-radius: .4rem;
     background-color: var(--marine-blue);
@@ -159,11 +164,213 @@ input::placeholder{
     text-transform: capitalize;
     font-size: 12px;
     padding: .6rem 1.25rem;
+    cursor: pointer;
     font-weight: 500;
 }
+.prev{
+    /* visibility: hidden; */
+    border: none;
+    background-color: var(--alabaster);
+    color: var(--cool-gray);
+    text-transform: capitalize;
+    font-size: 12px;
+    padding: .6rem 1.25rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+.prev:hover{
+    color: var(--marine-blue);
+}
+/* .step-2{
 
+} */
+.plan{
+    display: flex;
+    justify-content: space-between;
+    gap: .5rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.arcade-plan, .advanced-plan, .pro-plan{
+    border: 1px solid var(--cool-gray);
+    border-radius: .35rem;
+    width: 30%;
+    box-sizing: border-box;
+    padding: 1rem .5rem;
+}
+.arcade-plan:hover, .advanced-plan:hover, .pro-plan:hover{
+    border: 1px solid var(--purplish-blue);
+    border-left: 2px solid var(--pastel-blue);
+    background-color: var(--magnolia);
+}
+.arcade-plan{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+}
+.arcade-plan div{
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.arcade-plan div span:first-child{
+    color: var(--marine-blue);
+    font-size: 14px;
+    font-weight: 700;
+}
+.arcade-plan div span:nth-child(2){
+    font-size: 11px;
+}
 
-.step-2, .step-3, .step-4, .step-5{
+.advanced-plan{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+}
+.advanced-plan div{
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.advanced-plan div span:first-child{
+    color: var(--marine-blue);
+    font-size: 14px;
+    font-weight: 700;
+}
+.advanced-plan div span:nth-child(2){
+    font-size: 11px;
+}
+
+.pro-plan{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+}
+.pro-plan div{
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.pro-plan div span:first-child{
+    color: var(--marine-blue);
+    font-size: 14px;
+    font-weight: 700;
+}
+.pro-plan div span:nth-child(2){
+    font-size: 11px;
+}
+.duration{
+    background-color: var(--magnolia);
+    width: 100%;
+    padding: .75rem;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--marine-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    border-radius: .5rem;
+}
+
+/* Start of toggle button */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 33px;
+    height: 16px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--marine-blue);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 2px;
+    bottom: 2px;
+    background-color: var(--whitte);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--marine-blue);
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--marine-blue);
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(17px);
+    -ms-transform: translateX(17px);
+    transform: translateX(17px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+/* End of toggle button */
+.step-2 .footer{
+    margin-top: 5rem;
+}
+/* ============== step 3 =============== */
+.step-3-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.services, .storage, .profile{
+    padding: 1rem;
+    border: 1px solid var(--purplish-blue);
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+input[type = checkbox]{
+    margin: 0;
+    padding: 0;
+    height: 13px;
+}
+
+.step-3 .footer{
+    margin-top: 5rem;
+}
+
+.step-1, .step-2, .step-4, .step-5{
     display: none;
 } 
 
